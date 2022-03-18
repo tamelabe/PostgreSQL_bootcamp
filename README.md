@@ -13,25 +13,25 @@ Resume: Today you will see how relational model works and how to get needed data
 3. [Chapter III](#chapter-iii) \
     3.1. [Rules of the day](#rules-of-the-day)  
 4. [Chapter IV](#chapter-iv) \
-    4.1. [Exercise 00 - First steps into SQL world](#exercise-00)  
+    4.1. [Exercise 00 - First steps into SQL world](#exercise-00-first-steps-into-sql-world)  
 5. [Chapter V](#chapter-v) \
-    5.1. [Exercise 01 - First steps into SQL world](#exercise-01)  
+    5.1. [Exercise 01 - First steps into SQL world](#exercise-01-first-steps-into-sql-world)  
 6. [Chapter VI](#chapter-vi) \
-    6.1. [Exercise 02 - First steps into SQL world](#exercise-02)  
+    6.1. [Exercise 02 - First steps into SQL world](#exercise-02-first-steps-into-sql-world)  
 7. [Chapter VII](#chapter-vii) \
-    7.1. [Exercise 03 - First steps into SQL world](#exercise-03)  
+    7.1. [Exercise 03 - First steps into SQL world](#exercise-03-first-steps-into-sql-world)  
 8. [Chapter VIII](#chapter-viii) \
-    8.1. [Exercise 04 - First steps into SQL world](#exercise-04)
+    8.1. [Exercise 04 - First steps into SQL world](#exercise-04-first-steps-into-sql-world)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - First steps into SQL world](#exercise-05)
+    9.1. [Exercise 05 - First steps into SQL world](#exercise-05-first-steps-into-sql-world)
 10. [Chapter X](#chapter-x) \
-    10.1. [Exercise 06 - First steps into SQL world](#exercise-06)
+    10.1. [Exercise 06 - First steps into SQL world](#exercise-06-first-steps-into-sql-world)
 11. [Chapter XI](#chapter-xi) \
-    11.1. [Exercise 07 - First steps into SQL world](#exercise-07)
+    11.1. [Exercise 07 - First steps into SQL world](#exercise-07-first-steps-into-sql-world)
 12. [Chapter XII](#chapter-xii) \
-    12.1. [Exercise 08 - First steps into SQL world](#exercise-08)
+    12.1. [Exercise 08 - First steps into SQL world](#exercise-08-first-steps-into-sql-world)
 13. [Chapter XIII](#chapter-xiii) \
-    13.1. [Exercise 09 - First steps into SQL world](#exercise-09)
+    13.1. [Exercise 09 - First steps into SQL world](#exercise-09-first-steps-into-sql-world)
 
 ## Chapter I
 ## Preamble
@@ -50,8 +50,8 @@ Please take a look at some SQL standards below and try to think about the future
 | ![D01_05](misc/images/D01_05.png) | ![D01_06](misc/images/D01_06.png) |
 | ![D01_07](misc/images/D01_07.png) | ![D01_08](misc/images/D01_08.png) |
 
-<h2 id="chapter-ii">Chapter II</h2>
-<h2 id="general-rules" >General Rules</h2>
+## Chapter II
+## General Rules
 
 - Use this page as the only reference. Do not listen to any rumors and speculations on how to prepare your solution.
 - Please make sure you are using the latest version of PostgreSQL.
@@ -65,8 +65,8 @@ Please take a look at some SQL standards below and try to think about the future
 - And may the SQL-Force be with you!
 - Absolutely everything can be presented in SQL! Let’s start and have fun!
 
-<h2 id="chapter-iii">Chapter III</h2>
-<h2 id="rules-of-the-day">Rules of the day</h2>
+## Chapter III
+## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
 - Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
@@ -103,8 +103,8 @@ Please take a look at some SQL standards below and try to think about the future
 - field order_date - date (for example 2022-01-01) of person order 
 
 
-<h2 id="chapter-iv">Chapter IV</h2>
-<h2 id="exercise-00">Exercise 00 - First steps into SQL world</h2>
+## Chapter IV
+## Exercise 00 - First steps into SQL world
 
 | Exercise 00: First steps into SQL world |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -117,8 +117,8 @@ Let’s make our first task.
 Please make a select statement which returns the person name and person age from the city ‘Kazan’.
 
 
-<h2 id="chapter-v">Chapter V</h2>
-<h2 id="exercise-01">Exercise 01 - First steps into SQL world</h2>
+## Chapter V
+## Exercise 01 - First steps into SQL world
 
 | Exercise 01: First steps into SQL world |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -129,8 +129,8 @@ Please make a select statement which returns the person name and person age from
 
 Please make a select statement which returns the person name , person age from the city ‘Kazan’ and gender is ‘female’. Yep, and please add ordering clause by person name.
 
-<h2 id="chapter-vi">Chapter VI</h2>
-<h2 id="exercise-02">Exercise 02 - First steps into SQL world</h2>
+## Chapter VI
+## Exercise 02 - First steps into SQL world
 
 | Exercise 02: First steps into SQL world |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -143,8 +143,8 @@ Please make 2 syntax different select statements which return a list of pizzeria
 - the 1st select statement should contain signs for comparison (<=, =>)
 - the 2nd select statement should contain BETWEEN keyword
 
-<h2 id="chapter-vii">Chapter VII</h2>
-<h2 id="exercise-03">Exercise 03 - First steps into SQL world</h2>
+## Chapter VII
+## Exercise 03 - First steps into SQL world
 
 | Exercise 03: First steps into SQL world |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -155,8 +155,8 @@ Please make 2 syntax different select statements which return a list of pizzeria
 
 Please make a select statement which returns the person identifier (without duplication) which visits pizzerias during 6th of January 2022 and 9th of January 2022 or visits pizzeria with identifier 2. Also include ordering clause by person identifier in descending mode.
 
-<h2 id="chapter-viii">Chapter VIII</h2>
-<h2 id="exercise-04">Exercise 04 - First steps into SQL world</h2>
+## Chapter VIII
+## Exercise 04 - First steps into SQL world
 
 
 | Exercise 04: First steps into SQL world |                                                                                                                          |
@@ -173,8 +173,8 @@ Please make a select statement which returns one pre-calculated field with name 
 Finally , please add the ordering clause by pre-calculated column in ascending mode.
 Please pay attention to quote symbols in your formula!
 
-<h2 id="chapter-ix">Chapter IX</h2>
-<h2 id="exercise-05">Exercise 05 - First steps into SQL world</h2>
+## Chapter IX
+## Exercise 05 - First steps into SQL world
 
 
 | Exercise 05: First steps into SQL world |                                                                                                                          |
@@ -195,8 +195,8 @@ Please take a look at the pattern of internal query.
     FROM ...
     WHERE ...
 
-<h2 id="chapter-x">Chapter X</h2>
-<h2 id="exercise-06">Exercise 06 - First steps into SQL world</h2>
+## Chapter X
+## Exercise 06 - First steps into SQL world
 
 
 | Exercise 06: First steps into SQL world |                                                                                                                          |
@@ -213,8 +213,8 @@ Please use SQL construction from Exercise 05 and add a new calculated column (se
     if (person_name == ‘Denis’) then return true
         else return false
 
-<h2 id="chapter-xi">Chapter XI</h2>
-<h2 id="exercise-07">Exercise 07 - First steps into SQL world</h2>
+## Chapter XI
+## Exercise 07 - First steps into SQL world
 
 
 | Exercise 07: First steps into SQL world |                                                                                                                          |
@@ -233,8 +233,8 @@ Please make a SQL statement which returns a person identifier, person name and i
 
 and yes...please add an ascending ordering by ‘interval’ column
 
-<h2 id="chapter-xii">Chapter XII</h2>
-<h2 id="exercise-08">Exercise 08 - First steps into SQL world</h2>
+## Chapter XII
+## Exercise 08 - First steps into SQL world
 
 
 | Exercise 08: First steps into SQL world |                                                                                                                          |
@@ -246,8 +246,8 @@ and yes...please add an ascending ordering by ‘interval’ column
 
 Please make a SQL statement which returns all columns from the `person_order` table but rows whose identifier is even number and add ordering by returned identifier.
 
-<h2 id="chapter-xiii">Chapter XIII</h2>
-<h2 id="exercise-09">Exercise 09 - First steps into SQL world</h2>
+## Chapter XIII
+## Exercise 09 - First steps into SQL world
 
 
 | Exercise 09: First steps into SQL world |                                                                                                                          |
