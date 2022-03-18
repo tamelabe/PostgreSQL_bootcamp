@@ -31,12 +31,12 @@ Resume: Today you will see how relational model works and how to get needed data
 12. [Chapter XII](#chapter-xii) \
     12.1. [Exercise 08 - First steps into SQL world](#exercise-08)
 13. [Chapter XIII](#chapter-xiii) \
-    13.1. [Exercise 08 - First steps into SQL world](#exercise-09)
+    13.1. [Exercise 09 - First steps into SQL world](#exercise-09)
 
 <h2 id="chapter-i" >Chapter I</h2>
 <h2 id="preamble" >Preamble</h2> 
 
-![D01_01](misc/images/D01_01.png)
+![D01_01](/misc/images/D01_01.png)
 
 Standards are everywhere, and Relational Databases are under control as well :-). To be honest between us, more restricted SQL standards were at the beginning of 2000 years. Actually when the “Big Data” pattern was born, Relational Databases had their own way to realize this pattern and therefore standards right now are more ... lightweight. 
 
