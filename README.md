@@ -79,7 +79,7 @@ Also, there are “a few” additional differences between View and Materialized
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model. 
 
@@ -195,8 +195,8 @@ Please write a SQL statement which returns missing days for persons’ visits in
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement which satisfies a formula `(R - S)∪(S-R)` .
-Where R is the `person_visits` table with filter by 2nd of January 2022, S is also `person_visits` table but with a different filter by 6th of January 2022. Please make your calculations with sets under the person_id column. The result please sort by person_id column and your final SQL please present in `v_symmetric_union` (*) database view.
+Please write a SQL statement which satisfies a formula `(R - S)∪(S - R)` .
+Where R is the `person_visits` table with filter by 2nd of January 2022, S is also `person_visits` table but with a different filter by 6th of January 2022. Please make your calculations with sets under the `person_id` column and this column will be alone in a result. The result please sort by `person_id` column and your final SQL please present in `v_symmetric_union` (*) database view.
 
 (*) to be honest, the definition “symmetric union” doesn’t exist in Set Theory. This is the author's interpretation, the main idea is based on the existing rule of symmetric difference. 
 
@@ -213,7 +213,7 @@ Where R is the `person_visits` table with filter by 2nd of January 2022, S is al
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please create a Database View `v_price_with_discount` that returns a person's orders with person names, pizza names, real price and calculated column discount_price (with applied 10% discount). The result please sort by person name and pizza name. Please take a look at a sample result below.
+Please create a Database View `v_price_with_discount` that returns a person's orders with person names, pizza names, real price and calculated column `discount_price` (with applied 10% discount and satisfies formula `price - price*0.1`). The result please sort by person name and pizza name and make a round for `discount_price` column to integer type. Please take a look at a sample result below.
 
 
 | name |  pizza_name | price | discount_price |
@@ -221,6 +221,7 @@ Please create a Database View `v_price_with_discount` that returns a person's or
 | Andrey | cheese pizza | 800 | 720 | 
 | Andrey | mushroom pizza | 1100 | 990 |
 | ... | ... | ... | ... |
+
 
 
 
@@ -235,10 +236,9 @@ Please create a Database View `v_price_with_discount` that returns a person's or
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please create a Materialized View `mv_dmitriy_visits_and_eats` (with data included) based on SQL statement that finds the names of pizzerias where Dmitriy visited and can buy pizzas he eats for less than 800 rubles on 8th of January of 2022 (this SQL you can find out at Day #02 Exercise #07). 
+Please create a Materialized View `mv_dmitriy_visits_and_eats` (with data included) based on SQL statement that finds the name of pizzeria Dmitriy visited on January 8, 2022 and could eat pizzas for less than 800 rubles (this SQL you can find out at Day #02 Exercise #07). 
 
 To check yourself you can write SQL to Materialized View `mv_dmitriy_visits_and_eats` and compare results with your previous query.
-
 
 
 ## Chapter XI
@@ -254,11 +254,8 @@ To check yourself you can write SQL to Materialized View `mv_dmitriy_visits_and_
 | **Denied**                               |                                                                                                                          |
 | SQL Syntax Pattern                        | Don’t use direct numbers for identifiers of Primary Key, person and pizzeria                                                                                               |
 
-Let's refresh data in our Materialized View `mv_dmitriy_visits_and_eats` from exercise #07. Before this action, please generate one more Dmitriy visit that satisfies the SQL clause of Materialized View with additional requirement that Dmitriy should not visit the same pizzeria restaurant which was before.
+Let's refresh data in our Materialized View `mv_dmitriy_visits_and_eats` from exercise #06. Before this action, please generate one more Dmitriy visit that satisfies the SQL clause of Materialized View except pizzeria that we can see in a result from exercise #06.
 After adding a new visit please refresh a state of data for `mv_dmitriy_visits_and_eats`.
-
-
-
 
 ## Chapter XII
 ## Exercise 08 - Just clear our database
