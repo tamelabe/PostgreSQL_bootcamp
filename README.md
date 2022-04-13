@@ -121,13 +121,12 @@ Moreover, SQL sets are useful  to calculate some specific Data Science metrics, 
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement which returns menu’s identifier and pizza names from `menu` table and person’s identifier and person name from `person` table in one global list (with column names are presented on a sample below) ordered by object_name column.
+Please write a SQL statement which returns menu’s identifier and pizza names from `menu` table and person’s identifier and person name from `person` table in one global list (with column names as presented on a sample below) ordered by object_id and then by object_name columns.
 
 | object_id | object_name |
 | ------ | ------ |
-| 2 | Andrey |
 | 1 | Anna |
-| 8 | cheese pizza |
+| 1 | cheese pizza |
 | ... | ... |
 
 
@@ -142,7 +141,7 @@ Please write a SQL statement which returns menu’s identifier and pizza names f
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please modify a SQL statement from “exercise 00” by removing the object_id column then change ordering by object_name for part of data from the `person` table and then by `menu` table (like presented on a sample below). Please save duplicates!
+Please modify a SQL statement from “exercise 00” by removing the object_id column. Then change ordering by object_name for part of data from the `person` table and then from `menu` table (like presented on a sample below). Please save duplicates!
 
 | object_name |
 | ------ |
@@ -166,7 +165,7 @@ Please modify a SQL statement from “exercise 00” by removing the object_id c
 | **Denied**                               |                                                                                                                          |
 | SQL Syntax Construction                        | `DISTINCT`, `GROUP BY`, `HAVING`, any type of `JOINs`                                                                                              |
 
-Please write a SQL which returns unique pizza names from the `menu` table and ordering by pizza_name column in descending mode. Please pay attention to the Denied section.
+Please write a SQL statement which returns unique pizza names from the `menu` table and orders by pizza_name column in descending mode. Please pay attention to the Denied section.
 
 ## Chapter VII
 ## Exercise 03 - “Hidden” Insights
@@ -180,13 +179,15 @@ Please write a SQL which returns unique pizza names from the `menu` table and or
 | **Denied**                               |                                                                                                                          |
 | SQL Syntax Construction                        |  any type of `JOINs`                                                                                              |
 
-Please write a SQL statement which returns common rows for attributes order_date, person_id from `person_order` table from one side and visit_date, person_id from `person_visits` table from other side (please see a sample below). Other words, let’s find persons' identifiers which visited and then ordered some pizza on the same day. Actually, please add ordering by action_date in ascending mode and then by person_id by descending mode.
+Please write a SQL statement which returns common rows for attributes order_date, person_id from `person_order` table from one side and visit_date, person_id from `person_visits` table from the other side (please see a sample below). In other words, let’s find identifiers of persons, who visited and ordered some pizza on the same day. Actually, please add ordering by action_date in ascending mode and then by person_id in descending mode.
 
 | action_date | person_id |
 | ------ | ------ |
 | 2022-01-01 | 6 |
 | 2022-01-01 | 2 |
 | 2022-01-01 | 1 |
+| 2022-01-03 | 7 |
+| 2022-01-04 | 3 |
 | ... | ... |
 
 ## Chapter VIII
@@ -202,7 +203,7 @@ Please write a SQL statement which returns common rows for attributes order_date
 | **Denied**                               |                                                                                                                          |
 | SQL Syntax Construction                        |  any type of `JOINs`                                                                                              |
 
-Please write a SQL statement which returns a difference (minus) of person_id column with saving duplicates between `person_order` table and `person_visits` table for order_date and visit_date are for 7th of January of 2022
+Please write a SQL statement which returns a difference (minus) of person_id column values with saving duplicates between `person_order` table and `person_visits` table for order_date and visit_date are for 7th of January of 2022
 
 ## Chapter IX
 ## Exercise 05 - Did you hear about Cartesian Product?
@@ -215,7 +216,7 @@ Please write a SQL statement which returns a difference (minus) of person_id col
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement which returns all possible combinations between `person` and `pizzeria` tables and please set ordering by person identifier and then by pizzeria identifier columns. Please take a look at the result sample below.
+Please write a SQL statement which returns all possible combinations between `person` and `pizzeria` tables and please set ordering by person identifier and then by pizzeria identifier columns. Please take a look at the result sample below. Please be aware column's names can be different for you.
 
 | person.id | person.name | age | gender | address | pizzeria.id | pizzeria.name | rating |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
@@ -235,7 +236,7 @@ Please write a SQL statement which returns all possible combinations between `pe
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Let's return our mind back to exercise #03 and change our SQL statement to return person names instead of person identifiers and change ordering by action_date in ascending mode and then by person_name by descending mode. Please take a look at a sample of data below.
+Let's return our mind back to exercise #03 and change our SQL statement to return person names instead of person identifiers and change ordering by action_date in ascending mode and then by person_name in descending mode. Please take a look at a data sample below.
 
 | action_date | person_name |
 | ------ | ------ |
@@ -255,7 +256,7 @@ Let's return our mind back to exercise #03 and change our SQL statement to retur
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement which returns the date of order from the `person_order` table and corresponding person name (please rename an output calculated column to person_information) which made an order from the `person` table like the next sample below. Add a sort by both columns in ascending mode.
+Please write a SQL statement which returns the date of order from the `person_order` table and corresponding person name (name and age are formatted as in the data sample below) which made an order from the `person` table. Add a sort by both columns in ascending mode.
 
 | order_date | person_information |
 | ------ | ------ |
@@ -279,7 +280,7 @@ Please write a SQL statement which returns the date of order from the `person_or
 | **Denied**                               |                                                                                                                          |
 | SQL Syntax Construction                        | other type of  `JOINs`                                                                                              |
 
-Please rewrite a SQL statement from exercise #07 by using NATURAL JOIN construction. 
+Please rewrite a SQL statement from exercise #07 by using NATURAL JOIN construction. The result must be the same like for exercise #07.  
 
 ## Chapter XIII
 ## Exercise 09 - IN versus EXISTS
@@ -292,7 +293,7 @@ Please rewrite a SQL statement from exercise #07 by using NATURAL JOIN construct
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a 2 SQL statements which returns a list of pizzerias names which have not been visited by persons by using IN for 1st one and EXISTS for the 2nd one.
+Please write 2 SQL statements which return a list of pizzerias names which have not been visited by persons by using IN for 1st one and EXISTS for the 2nd one.
 
 ## Chapter XIV
 ## Exercise 10 - Global JOIN
