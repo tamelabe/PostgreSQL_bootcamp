@@ -77,7 +77,7 @@ Just think about it and try to create a clean architecture :-)
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 and in Day06 during exercise 07 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model. 
 
@@ -268,7 +268,7 @@ To check yourself and call a function, you can make a statement like below (wow!
 
 Let’s look at pl/pgsql functions right now. 
 
-Please create a pl/pgsql function  `fnc_person_visits_and_eats_on_date` based on SQL statement that finds the names of pizzerias where person (`IN` pperson parameter with default value is ‘Dmitriy’) visited and can buy pizzas he eats for less than some rubles (`IN` prubles parameter with default value is 500) on date (`IN` pdate parameter with default value is 1st of January 2022). 
+Please create a pl/pgsql function  `fnc_person_visits_and_eats_on_date` based on SQL statement that finds the names of pizzerias where person (`IN` pperson parameter with default value is ‘Dmitriy’) visited and can buy pizzas he eats for less than some rubles (`IN` pprice parameter with default value is 500) on date (`IN` pdate parameter with default value is 8th of January 2022). 
 
 To check yourself and call a function, you can make a statement like below.
 
@@ -290,11 +290,11 @@ To check yourself and call a function, you can make a statement like below.
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DDL, DML                                                                                              |
 
-Please write a SQL or pl/pgsql function `fnc_mleast` (it’s up to you) that has an input parameter is an array of numbers and the function should return a minimum value. 
+Please write a SQL or pl/pgsql function `func_minimim` (it’s up to you) that has an input parameter is an array of numbers and the function should return a minimum value. 
 
 To check yourself and call a function, you can make a statement like below.
 
-    SELECT fnc_mleast(VARIADIC arr => ARRAY[10.0, -1.0, 5.0, 4.4]);
+    SELECT func_minimim(VARIADIC arr => ARRAY[10.0, -1.0, 5.0, 4.4]);
 
 
 ## Chapter XII
