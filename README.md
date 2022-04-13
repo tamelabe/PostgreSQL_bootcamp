@@ -84,7 +84,7 @@ Nowadays, IT community found a set of new anomalies based on Database Model (log
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 and in Day06 during exercise 07 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model. 
 
@@ -256,7 +256,7 @@ Actually, we need two active sessions (meaning 2 parallel sessions in the comman
 
 |  |  |
 | ------ | ------ |
-| Let’s check one of the famous “Non-Repeatable Reads” database pattern but under `SERIALIZATION` isolation level. You can see a graphical presentation of that anomaly on a picture. Horizontal Red Line means the final results after all sequential steps for both Sessions. | ![D08_09](misc/images/D08_09.png) |
+| Let’s check one of the famous “Non-Repeatable Reads” database pattern but under `SERIALIZABLE` isolation level. You can see a graphical presentation of that anomaly on a picture. Horizontal Red Line means the final results after all sequential steps for both Sessions. | ![D08_09](misc/images/D08_09.png) |
 
 Please check a rating for “Pizza Hut” in a transaction mode for both Sessions and after that make `UPDATE` of rating to 3.0 value in session #2 (in the same order as in the picture). 
 
@@ -329,5 +329,5 @@ Let’s reproduce a deadlock situation in our database.
 | ------ | ------ |
 | You can see a graphical presentation of the deadlock situation on a picture. Looks like a “christ-lock” between parallel sessions. | ![D08_12](misc/images/D08_12.png) |
 
-Please write any SQL statement on the `person` table to reproduce this deadlock situation.
+Please write any SQL statement with any isolation level (you can use default setting) on the `person` table to reproduce this deadlock situation.
 
