@@ -23,7 +23,7 @@ Resume: Today you will see how and when to create database indexes
 8. [Chapter VIII](#chapter-viii) \
     8.1. [Exercise 04 - Uniqueness for data](#exercise-04-uniqueness-for-data)
 9. [Chapter IX](#chapter-ix) \
-    9.1. [Exercise 05 - Partially uniqueness for data](#exercise-05-partially-uniqueness-for-data)
+    9.1. [Exercise 05 - Partial uniqueness for data](#exercise-05-partial-uniqueness-for-data)
 10. [Chapter X](#chapter-x) \
     10.1. [Exercise 06 - Let’s make performance improvement](#exercise-06-lets-make-performance-improvement)
 
@@ -38,7 +38,7 @@ Let me explain the reason why the index exists but is not used.
 
 |  |  |
 | ------ | ------ |
-| Please take a look at the picture, the red line means linear time to find data based on a query. Other words, if you need to find something then you have to see in each block , page , tuple and create a list of your searching rows. (this term has a name “sequential scanning”). Actually, if you created a BTree index, then you got an improvement for speed. So, the green line corresponds to logarithmic searching time. Let’s imagine,  if you have 1000000 rows, and to make a search for 1 row , you need, saying ... 1 second then in total you need 1000000 seconds, buf with index you need ln(1000000) ~ 14 seconds | ![D05_02](misc/images/D05_02.png) |
+| Please take a look at the picture, the red line means linear time to find data based on a query. Other words, if you need to find something then you have to see in each block , page , tuple and create a list of your searching rows. (this term has a name “sequential scanning”). Actually, if you created a BTree index, then you got an improvement for speed. So, the green line corresponds to logarithmic searching time. Let’s imagine,  if you have 1000000 rows, and to make a search for 1 row , you need, saying ... 1 second then in total you need 1000000 seconds, but with index you need ln(1000000) ~ 14 seconds | ![D05_02](misc/images/D05_02.png) |
 | ![D05_03](misc/images/D05_03.png) | But why… index is not working? There are different reasons to be honest, but the main one is based on the total number of rows of the indexed table. Please take a look at a picture, I drawed a bold blue line and this is a path for searching algorithms. As you can see, linear time at the beginning is most appropriate for algorithms instead of using logarithmic search. How does one detect this intersection point? Basically I can recommend experiments, benchmarks and … your intuition. No formulas at all. Therefore sometimes, if you want to compare  results of your searching, you need to disable sequential scanning explicitly. For example, there is a special command  set enable_seqscan =off in PostgreSQL |
 
 
@@ -63,7 +63,7 @@ Let me explain the reason why the index exists but is not used.
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). 
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 and in Day06 during exercise 07 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model. 
 
@@ -120,7 +120,7 @@ Please create a simple BTree index for every foreign key in our database. The na
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Before please write a SQL statement that returns pizzas’ and corresponding pizzeria names. Please take a look at the sample result below.
+Before further steps please write a SQL statement that returns pizzas’ and corresponding pizzeria names. Please take a look at the sample result below (no sort needed).
 
 | pizza_name | pizzeria_name | 
 | ------ | ------ |
@@ -171,10 +171,11 @@ Please create a better multicolumn B-Tree index with the name `idx_person_order_
     WHERE person_id = 8 AND menu_id = 19;
 
 
-The `EXPLAIN ANALYZE` command should return  the next pattern
+The `EXPLAIN ANALYZE` command should return  the next pattern. Please be attention on "Index Only Scan" scanning!
 
     Index Only Scan using idx_person_order_multi on person_order ...
 
+Please provide any SQL with proof (`EXPLAIN ANALYZE`) that index `idx_person_order_multi` is working. 
 
 ## Chapter VIII
 ## Exercise 04 - Uniqueness for data
@@ -187,22 +188,22 @@ The `EXPLAIN ANALYZE` command should return  the next pattern
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please create a unique BTree index with the name `idx_menu_unique` on the `menu` table for foreign key to pizzeria and pizza name. 
+Please create a unique BTree index with the name `idx_menu_unique` on the `menu` table for  `pizzeria_id` and `pizza_name` columns. 
 Please write and provide any SQL with proof (`EXPLAIN ANALYZE`) that index `idx_menu_unique` is working. 
 
 
 ## Chapter IX
-## Exercise 05 - Partially uniqueness for data
+## Exercise 05 - Partial uniqueness for data
 
 
-| Exercise 05: Partially uniqueness for data |                                                                                                                          |
+| Exercise 05: Partial uniqueness for data |                                                                                                                          |
 |---------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | Turn-in directory                     | ex05                                                                                                                     |
 | Files to turn-in                      | `day05_ex05.sql`                                                                                 |
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please create a partially unique BTree index with the name `idx_person_order_order_date` on the `person_order` table for person_id and menu_id attributes with partially uniqueness for order_date column for date ‘2022-01-01’.
+Please create a partial unique BTree index with the name `idx_person_order_order_date` on the `person_order` table for `person_id` and `menu_id` attributes with partial uniqueness for `order_date` column for date ‘2022-01-01’.
 
 The `EXPLAIN ANALYZE` command should return  the next pattern
 
@@ -230,7 +231,7 @@ Please take a look at SQL below from a technical perspective (ignore a logical c
 
 Create a new BTree index with name `idx_1` which should improve the “Execution Time” metric of this SQL. Please provide proof (`EXPLAIN ANALYZE`) that SQL was improved.
 
-**Hint**: this exercise looks a “brute force” task to find a good covering index therefore before your new test remove `idx_1` index.
+**Hint**: this exercise looks like a “brute force” task to find a good covering index therefore before your new test remove `idx_1` index.
 
 Sample of my improvement:
 
