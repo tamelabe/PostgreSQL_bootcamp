@@ -280,7 +280,7 @@ Please find all pizza names (and corresponding pizzeria names using `menu` table
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please find the name of pizzeria Dmitry visited on January 8, 2022 and could eat pizza for less than 800 rubles.
+Please find the name of pizzeria Dmitriy visited on January 8, 2022 and could eat pizza for less than 800 rubles.
 
 ## Chapter XII
 ## Exercise 08 - Continuing to research data
