@@ -110,6 +110,8 @@ Just think about it and try to create a clean architecture :-)
 - field menu_id - foreign key to menu
 - field order_date - date (for example 2022-01-01) of person order 
 
+Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
+
 
 ## Chapter IV
 ## Exercise 00 - Audit of incoming inserts
@@ -290,11 +292,11 @@ To check yourself and call a function, you can make a statement like below.
 | **Allowed**                               |                                                                                                                          |
 | Language                        | SQL, DDL, DML                                                                                              |
 
-Please write a SQL or pl/pgsql function `func_minimim` (it’s up to you) that has an input parameter is an array of numbers and the function should return a minimum value. 
+Please write a SQL or pl/pgsql function `func_minimum` (it’s up to you) that has an input parameter is an array of numbers and the function should return a minimum value. 
 
 To check yourself and call a function, you can make a statement like below.
 
-    SELECT func_minimim(VARIADIC arr => ARRAY[10.0, -1.0, 5.0, 4.4]);
+    SELECT func_minimum(VARIADIC arr => ARRAY[10.0, -1.0, 5.0, 4.4]);
 
 
 ## Chapter XII
