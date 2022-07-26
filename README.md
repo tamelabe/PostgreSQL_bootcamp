@@ -95,6 +95,8 @@ On the other hand, your model should solve your functional tasks with minimal im
 - field menu_id - foreign key to menu
 - field order_date - date (for example 2022-01-01) of person order 
 
+Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
+
 
 ## Chapter IV
 ## Exercise 00 - Discounts, discounts , everyone loves discounts
@@ -159,11 +161,11 @@ So, there is a table `person_order` that stores the history of a person's orders
 
 Please write a SQL statement that returns orders with actual price and price with applied discount for each person in the corresponding pizzeria restaurant and sort by person name, and pizza name. Please take a look at the sample of data below.
 
-| name | pizza_name | price | discount_price |
-| ------ | ------ | ------ | ------ |
-| Andrey | cheese pizza | 800 | 624 |
-| Andrey | mushroom pizza | 1100 | 858 |
-| ... | ... | ... | ... |
+| name | pizza_name | price | discount_price | pizzeria_name | 
+| ------ | ------ | ------ | ------ | ------ |
+| Andrey | cheese pizza | 800 | 624 | Dominos |
+| Andrey | mushroom pizza | 1100 | 858 | Dominos |
+| ... | ... | ... | ... | ... |
 
 ## Chapter VII
 ## Exercise 03 - Improvements are in a way
