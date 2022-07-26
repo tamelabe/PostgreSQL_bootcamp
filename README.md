@@ -63,7 +63,7 @@ Let me explain the reason why the index exists but is not used.
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 and in Day06 during exercise 07 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model. 
 
@@ -96,6 +96,7 @@ Let me explain the reason why the index exists but is not used.
 - field menu_id - foreign key to menu
 - field order_date - date (for example 2022-01-01) of person order 
 
+Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
 
 ## Chapter IV
 ## Exercise 00 - Let’s create indexes for every foreign key
