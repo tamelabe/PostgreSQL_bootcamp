@@ -117,6 +117,8 @@ Nowadays, IT community found a set of new anomalies based on Database Model (log
 - field menu_id - foreign key to menu
 - field order_date - date (for example 2022-01-01) of person order 
 
+Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
+
 
 ## Chapter IV
 ## Exercise 00 - Simple transaction
@@ -329,5 +331,5 @@ Let’s reproduce a deadlock situation in our database.
 | ------ | ------ |
 | You can see a graphical presentation of the deadlock situation on a picture. Looks like a “christ-lock” between parallel sessions. | ![D08_12](misc/images/D08_12.png) |
 
-Please write any SQL statement with any isolation level (you can use default setting) on the `person` table to reproduce this deadlock situation.
+Please write any SQL statement with any isolation level (you can use default setting) on the `pizzeria` table to reproduce this deadlock situation.
 
