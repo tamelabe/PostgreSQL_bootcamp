@@ -69,7 +69,7 @@ If we are talking about historical data then we should mention the “Data lifec
 ## Rules of the day
 
 - Please make sure you have an own database and access for it on your PostgreSQL cluster. 
-- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 and in Day06 during exercise 07 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
+- Please download a [script](materials/model.sql) with Database Model here and apply the script to your database (you can use command line with psql or just run it through any IDE, for example DataGrip from JetBrains or pgAdmin from PostgreSQL community). **Our knowledge way is incremental and linear therefore please be aware all changes that you made in Day03 during exercises 07-13 and in Day04 during exercise 07 should be on place (its similar like in real world , when we applied a release and need to be consistency with data for new changes).**
 - All tasks contain a list of Allowed and Denied sections with listed database options, database types, SQL constructions etc. Please have a look at the section before you start.
 - Please take a look at the Logical View of our Database Model. 
 
@@ -173,8 +173,10 @@ Please write a SQL statement to see 3 favorite restaurants by visits and by orde
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
+Please write a SQL statement to see restaurants are grouping by visits and by orders and joined with each other by using restraunt name.  
+You can use internal SQLs from Exercise 02 (restaurants by visits and by orders) without limitations of amount of rows.
 
-Please rewrite a SQL statement from Exercise #02 with the next rules
+Additioanlly, please add the next rules.
 - calculate a sum of orders and visits for corresponding pizzeria (be aware, not all pizzeria keys are presented in both tables).
 - sort results by `total_count` column in descending mode and by `name` in ascending mode.
 Take a look at the data sample below.
@@ -294,7 +296,7 @@ We know about personal addresses from our data. Let’s imagine, that particular
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement that returns aggregated information by person’s address, average age per address , the result of “Maximal Age - (Minimal Age  / Maximal Age)” that is presented as a formula column and the result of comparison between formula and average columns (other words, if formula is greater than  average then True, otherwise False value).
+Please write a SQL statement that returns aggregated information by person’s address , the result of “Maximal Age - (Minimal Age  / Maximal Age)” that is presented as a formula column, next one is average age per address and the result of comparison between formula and average columns (other words, if formula is greater than  average then True, otherwise False value).
 
 The result should be sorted by address column. Please take a look at the sample of output data below.
 
