@@ -128,7 +128,7 @@ Please make a select statement which returns all person's names and person's age
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please make a select statement which returns names , ages for all womens from the city ‘Kazan’. Yep, and please sort result by name.
+Please make a select statement which returns names , ages for all women from the city ‘Kazan’. Yep, and please sort result by name.
 
 ## Chapter VI
 ## Exercise 02 - First steps into SQL world
