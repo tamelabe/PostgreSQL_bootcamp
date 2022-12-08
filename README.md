@@ -102,7 +102,7 @@ If we are talking about historical data then we should mention the “Data lifec
 - field menu_id - foreign key to menu
 - field order_date - date (for example 2022-01-01) of person order 
 
-Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restraunt (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
+Persons' visit and persons' order are different entities and don't contain any correlation between data. For example, a client can be in one restaurant (just looking at menu) and in this time make an order in different one by phone or by mobile application. Or another case,  just be at home and again make a call with order without any visits.
 
 
 ## Chapter IV
@@ -173,10 +173,10 @@ Please write a SQL statement to see 3 favorite restaurants by visits and by orde
 | **Allowed**                               |                                                                                                                          |
 | Language                        | ANSI SQL                                                                                              |
 
-Please write a SQL statement to see restaurants are grouping by visits and by orders and joined with each other by using restraunt name.  
+Please write a SQL statement to see restaurants are grouping by visits and by orders and joined with each other by using restaurant name.  
 You can use internal SQLs from Exercise 02 (restaurants by visits and by orders) without limitations of amount of rows.
 
-Additioanlly, please add the next rules.
+Additionally, please add the next rules.
 - calculate a sum of orders and visits for corresponding pizzeria (be aware, not all pizzeria keys are presented in both tables).
 - sort results by `total_count` column in descending mode and by `name` in ascending mode.
 Take a look at the data sample below.
