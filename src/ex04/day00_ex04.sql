@@ -1,4 +1,4 @@
-SELECT format('%s (age:%s,gender:%L,address:%L)', name, age, gender, address)
+SELECT name || ' (age:' || age || $$,gender:'$$ || gender || $$',address:'$$ || address || $$')$$ AS person_information
 FROM person
-ORDER BY name ASC
+ORDER BY person_information
 ;
