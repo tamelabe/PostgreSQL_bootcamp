@@ -1,5 +1,5 @@
 SELECT menu.pizza_name AS pizza_name, pizzeria.name AS pizzeria_name
-from person_order po
+FROM person_order po
 JOIN menu ON po.menu_id = menu.id
 JOIN pizzeria ON menu.pizzeria_id = pizzeria.id
 JOIN person ON po.person_id = person.id
