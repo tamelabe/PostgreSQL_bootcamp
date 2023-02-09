@@ -1,5 +1,5 @@
-SELECT pizzeria.name pizzeria_name
-FROM person_visits pv
+SELECT pizzeria.name AS pizzeria_name
+FROM person_visits AS pv
 JOIN person p ON p.id = pv.person_id
 JOIN pizzeria ON pv.pizzeria_id = pizzeria.id
 JOIN menu ON pizzeria.id = menu.pizzeria_id

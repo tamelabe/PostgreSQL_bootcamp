@@ -1,5 +1,5 @@
 SELECT name
 FROM person
-WHERE age > '25' AND gender = 'female'
+WHERE gender = 'female' AND age > '25'
 ORDER BY name
 ;

@@ -1,5 +1,5 @@
 WITH my_query AS
-    (SELECT p.id p_id, p.name name, m.pizza_name
+    (SELECT p.id p_id, p.name AS name, m.pizza_name
     FROM person p
     JOIN person_order po on p.id = po.person_id
     JOIN menu m on m.id = po.menu_id

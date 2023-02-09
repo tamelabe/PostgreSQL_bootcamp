@@ -1,4 +1,4 @@
-SELECT p.name name
+SELECT p.name AS name
 FROM person p
 JOIN person_order po on p.id = po.person_id
 JOIN menu m on m.id = po.menu_id

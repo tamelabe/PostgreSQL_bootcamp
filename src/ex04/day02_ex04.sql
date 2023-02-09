@@ -1,4 +1,4 @@
-SELECT pizza_name, pizzeria.name pizzeria_name, price
+SELECT pizza_name, pizzeria.name AS pizzeria_name, price
 FROM (SELECT *
       FROM menu
       WHERE pizza_name = 'mushroom pizza'
