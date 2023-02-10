@@ -12,13 +12,13 @@ WITH visited AS (
     JOIN pizzeria ON menu.pizzeria_id = pizzeria.id
     WHERE person.name = 'Andrey'),
     vo AS (
-    SELECT * FROM visit_pz
+    SELECT * FROM visited
     EXCEPT
-    SELECT * FROM order_pz),
+    SELECT * FROM ordered),
     ov AS (
-    SELECT * FROM order_pz
+    SELECT * FROM ordered
     EXCEPT
-    SELECT * FROM visit_pz)
+    SELECT * FROM visited)
 SELECT pizzeria_name
 FROM vo
 UNION

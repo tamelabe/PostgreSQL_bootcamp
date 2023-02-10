@@ -10,5 +10,5 @@ WITH list1 AS (
 SELECT list1.pizza_name, pizzeria_name_1, pizzeria_name_2, list1.price
 FROM list1, list2
 WHERE list1.pizza_name = list2.pizza_name AND list1.price = list2.price AND list1.id > list2.id
-ORDER BY pizza_name
+ORDER BY 1
 ;
