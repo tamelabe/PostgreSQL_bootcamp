@@ -1,4 +1,4 @@
-SELECT INTO person_order
+INSERT INTO person_order
 SELECT gs_id AS id,
        p.id AS person_id,
        (SELECT id FROM menu WHERE pizza_name = 'greek pizza') AS menu_id,
