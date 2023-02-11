@@ -1,5 +1,4 @@
 CREATE MATERIALIZED VIEW mv_dmitriy_visits_and_eats AS
--- Спросить имя колонки у пацанов
 SELECT pizzeria.name AS pizzeria_name
 FROM person_visits AS pv
 JOIN person p ON p.id = pv.person_id

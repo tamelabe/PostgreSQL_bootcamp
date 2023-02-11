@@ -1,6 +1,6 @@
 SELECT name
 FROM v_persons_male
-UNION
+UNION ALL
 SELECT name
 FROM v_persons_female
 ORDER BY 1
