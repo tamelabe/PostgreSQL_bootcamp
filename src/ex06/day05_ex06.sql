@@ -1,7 +1,6 @@
-DROP INDEX idx_1;
-CREATE INDEX idx_1 ON pizzeria(id, rating);
+-- DROP INDEX idx_1;
+CREATE INDEX idx_1 ON pizzeria(rating);
 SET enable_seqscan = OFF;
-SET enable_bitmapscan  = OFF;
 EXPLAIN ANALYSE
 SELECT
     m.pizza_name AS pizza_name,
