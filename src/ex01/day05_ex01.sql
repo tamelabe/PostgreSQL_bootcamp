@@ -1,4 +1,3 @@
-SET enable_indexscan = ON;
 SET enable_seqscan = OFF;
 EXPLAIN ANALYSE
 SELECT menu.pizza_name, pizz.name AS pizzeria_name

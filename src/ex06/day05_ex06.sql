@@ -1,4 +1,3 @@
--- DROP INDEX idx_1;
 CREATE INDEX idx_1 ON pizzeria(rating);
 SET enable_seqscan = OFF;
 EXPLAIN ANALYSE
