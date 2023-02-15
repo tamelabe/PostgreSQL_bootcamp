@@ -4,3 +4,4 @@ JOIN person p on p.id = pv.person_id
 GROUP BY p.name
 HAVING count(pv.person_id) > 3
 ORDER BY 2 DESC;
+

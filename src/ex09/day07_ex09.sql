@@ -8,3 +8,4 @@ WITH t_casted AS (
 SELECT address,  formula, average, formula > average AS comparison
 FROM t_formula
 ORDER BY 1;
+

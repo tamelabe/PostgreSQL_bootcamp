@@ -17,4 +17,5 @@ UNION ALL
 SELECT *
 FROM p_visit
 ORDER BY 3, 2 DESC;
+
 --Свериться с парнями (UNION)

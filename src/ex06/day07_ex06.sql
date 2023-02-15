@@ -5,3 +5,4 @@ JOIN menu m on m.id = po.menu_id
 JOIN pizzeria p on p.id = m.pizzeria_id
 GROUP BY p.id
 ORDER BY 1;
+
