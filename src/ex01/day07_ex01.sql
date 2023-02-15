@@ -6,4 +6,3 @@ SELECT p.name, t_plate.count_of_visits
 FROM t_plate
 JOIN person p ON t_plate.person_id = p.id
 ORDER BY 2 DESC, 1 LIMIT 4;
-
