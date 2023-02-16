@@ -18,4 +18,4 @@ WITH p_visit AS (
 SELECT pu.name, sum(count) AS total_count
 FROM p_united pu
 GROUP BY 1
-ORDER BY 2 DESC;
+ORDER BY 2 DESC, 1;
