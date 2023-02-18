@@ -1,7 +1,6 @@
 --
 DROP FUNCTION IF EXISTS fnc_persons_female();
 DROP FUNCTION IF EXISTS fnc_persons_male();
-DROP FUNCTION IF EXISTS fnc_persons();
 --
 CREATE OR REPLACE FUNCTION fnc_persons
         (IN pgender varchar default 'female')

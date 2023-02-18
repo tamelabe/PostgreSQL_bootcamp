@@ -17,7 +17,7 @@ CREATE OR REPLACE FUNCTION fnc_trg_person_audit()
     ELSIF (tg_op = 'UPDATE') THEN
         INSERT INTO person_audit SELECT now(), 'U', NEW.*;
     ELSIF (tg_op = 'DELETE') THEN
-    INSERT INTO person_audit SELECT now(), 'D', OLD.*;
+        INSERT INTO person_audit SELECT now(), 'D', OLD.*;
     END IF;
     RETURN NULL;
     END;$$;
@@ -30,4 +30,3 @@ INSERT INTO person(id, name, age, gender, address) VALUES (10,'Damir', 22, 'male
 UPDATE person SET name = 'Bulat' WHERE id = 10;
 UPDATE person SET name = 'Damir' WHERE id = 10;
 DELETE FROM person WHERE id = 10;
-

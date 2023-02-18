@@ -3,7 +3,7 @@ CREATE OR REPLACE FUNCTION fnc_trg_person_update_audit()
     LANGUAGE plpgsql AS
     $$BEGIN
     INSERT INTO person_audit
-        SELECT  now(), 'U', NEW.*;
+        SELECT  now(), 'U', OLD.*;
     RETURN NULL;
     END;$$;
 
