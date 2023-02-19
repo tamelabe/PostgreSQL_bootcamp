@@ -8,8 +8,6 @@ WITH currency_mod AS (
         SELECT user_id, sum(money) AS volume, type, currency_id
         FROM balance
         GROUP BY 1, 3, 4)
-
-
 SELECT COALESCE(u.name, 'not defined') AS name,
        COALESCE(u.lastname, 'not defined') AS lastname,
        b.type, b.volume,
