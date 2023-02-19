@@ -1,9 +1,7 @@
-insert into currency values (100, 'EUR', 0.85, '2022-01-01 13:29');
-insert into currency values (100, 'EUR', 0.79, '2022-01-08 13:29');
+-- insert into currency values (100, 'EUR', 0.85, '2022-01-01 13:29');
+-- insert into currency values (100, 'EUR', 0.79, '2022-01-08 13:29');
 
-DROP FUNCTION check_date(t_date timestamp, c_id bigint);
-
-CREATE OR REPLACE FUNCTION check_date(t_date timestamp, c_id bigint)
+CREATE OR REPLACE FUNCTION get_nearest_rate(t_date timestamp, c_id bigint)
     RETURNS numeric
     LANGUAGE SQL AS
     $$
@@ -33,7 +31,7 @@ WITH currency_mod AS (
 SELECT COALESCE(u.name, 'not defined') AS name,
        COALESCE(u.lastname, 'not defined') AS lastname,
        c.name AS currency_name,
-       (b.money::numeric * check_date(b.updated, c.id)) AS currency_in_usd
+       (b.money::numeric * get_nearest_rate(b.updated, c.id)) AS currency_in_usd
 FROM balance AS b
 FULL JOIN "user" u ON b.user_id = u.id
 JOIN currency_mod c on c.id = b.currency_id
